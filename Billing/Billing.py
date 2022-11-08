@@ -1,11 +1,15 @@
 import db
 from flask import Flask, jsonify, make_response, render_template, request
 
-app = Flask(__name__)
+from backend_config import create_app
+
+
+
+app = create_app()
 
 @app.route("/")
 def home():
-  return "Welcome to the Gan Shmuel Billing"
+  return b"<p>Welcome to Billing</p>"
 
 @app.route("/provider", methods=["POST"])
 def provider_create():
@@ -51,4 +55,4 @@ def health():
   return make_response("Failure", 500)
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
