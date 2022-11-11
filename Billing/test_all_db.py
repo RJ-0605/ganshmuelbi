@@ -46,4 +46,7 @@ def test_create_provider():
     assert new_user is not None
 
     assert new_user == 10001
+    
+    clear_provider_table(connection)
+
     print("######### . Record inserted, Database Test Passed ############")
