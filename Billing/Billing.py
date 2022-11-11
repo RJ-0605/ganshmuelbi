@@ -26,8 +26,8 @@ def create_app():
   def home():
     return render_template("index.html")
 
-  @app.route("/test_route", methods=["GET"])
-  def test_route():
+  @app.route("/mock_route", methods=["GET"])
+  def mock_route():
     return "Hello World"
 
 
