@@ -26,6 +26,18 @@ def create_app():
   def home():
     return render_template("index.html")
 
+
+  @app.route("/another_route", methods=["GET"])
+  def another_route():
+    
+    name="kelvin"
+
+    if request.json.get('is_frontend'):
+      return render_template("index.html", name=name)
+    else:
+      return make_success({"id": "", "name": name})
+
+
   @app.route("/mock_route", methods=["GET"])
   def mock_route():
     return "Hello World"
