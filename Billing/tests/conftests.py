@@ -17,12 +17,12 @@ def client():
         yield client
 
 
-@pytest.fixture(scope="session")
-def db_handle():
-   app = create_app() 
-   app.config["TESTING"] = True
-   with app.app_context():
-        app.db.create_all()
+# @pytest.fixture(scope="session")
+# def db_handle():
+#    app = create_app() 
+#    app.config["TESTING"] = True
+#    with app.app_context():
+#         app.db.create_all()
         
-   yield app.db
+#    yield app.db
 
